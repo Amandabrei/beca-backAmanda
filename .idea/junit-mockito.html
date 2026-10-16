@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUnit e Mockito | Beca BradAmanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cabecalho">
+    <a href="index.html" class="logo">Beca <span>BradAmanda</span></a>
+    <p>Guia de testes automatizados</p>
+</header>
+<main class="estudos">
+    <p class="destaque">MEUS RESUMOS</p>
+    <h1>🧪 JUnit e Mockito</h1>
+    <p class="subtitulo">Como testar o código Java.</p>
+    <article class="cartao">
+        <h2>1. O que é JUnit?</h2>
+        <p>JUnit é uma ferramenta para criar e executar testes automatizados em Java.</p>
+        <pre><code>@Test
+
+void deveSomarDoisNumeros() {
+
+    int resultado = 2 + 3;
+
+    assertEquals(5, resultado);
+
+}</code></pre>
+    </article>
+    <article class="cartao">
+        <h2>2. Annotations importantes</h2>
+        <ul>
+            <li>@Test: identifica um método de teste.</li>
+            <li>@BeforeEach: executa antes de cada teste.</li>
+            <li>@AfterEach: executa depois de cada teste.</li>
+            <li>@DisplayName: define um nome legível para o teste.</li>
+            <li>@ParameterizedTest: executa um teste com diferentes parâmetros.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>3. Assertions</h2>
+        <p>Verificam se o resultado obtido corresponde ao esperado.</p>
+        <pre><code>assertEquals(10, resultado);
+
+assertTrue(idade >= 18);
+
+assertNotNull(cliente);</code></pre>
+    </article>
+    <article class="cartao">
+        <h2>4. O que é Mockito?</h2>
+        <p>Mockito permite criar objetos simulados para testar uma classe sem depender de serviços reais.</p>
+        <ul>
+            <li>@Mock: cria um objeto simulado.</li>
+            <li>@InjectMocks: cria o objeto testado e injeta os mocks compatíveis.</li>
+            <li>when(): define o comportamento esperado.</li>
+            <li>thenReturn(): define o valor que será retornado.</li>
+            <li>verify(): verifica se uma interação aconteceu.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>5. Exemplo com Mockito</h2>
+        <pre><code>when(servico.buscarNome())
+
+    .thenReturn("Amanda");
+
+String nome = servico.buscarNome();
+
+assertEquals("Amanda", nome);
+
+verify(servico).buscarNome();</code></pre>
+        <p>O exemplo pressupõe que o mock e os imports já estejam configurados.</p>
+    </article>
+    <article class="cartao">
+        <h2>6. Conceitos importantes</h2>
+        <ul>
+            <li>Mock: objeto simulado.</li>
+            <li>Stub: fornece respostas previamente configuradas.</li>
+            <li>SUT (System Under Test): objeto que está sendo testado.</li>
+            <li>TDD: desenvolver guiado por testes.</li>
+            <li>BDD: descrever comportamentos esperados.</li>
+            <li>JaCoCo: mede a cobertura de código pelos testes.</li>
+        </ul>
+    </article>
+    <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
+</main>
+<footer>
+    <p>Beca BradAmanda © 2026</p>
+</footer>
+</body>
+</html>

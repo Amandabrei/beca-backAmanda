@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostgreSQL | Beca BradAmanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cabecalho">
+    <a href="index.html" class="logo">Beca <span>BradAmanda</span></a>
+    <p>Guia de bancos de dados</p>
+</header>
+<main class="estudos">
+    <p class="destaque">MEUS RESUMOS</p>
+    <h1>🗄️ PostgreSQL</h1>
+    <p class="subtitulo">Consultas e gerenciamento de dados.</p>
+    <article class="cartao">
+        <h2>1. O que é PostgreSQL?</h2>
+        <p>É um sistema gerenciador de banco de dados relacional que utiliza SQL para consultar e manipular dados.</p>
+    </article>
+    <article class="cartao">
+        <h2>2. Comandos básicos</h2>
+        <pre><code>-- Consultar dados
+SELECT * FROM clientes;
+-- Inserir dados
+INSERT INTO clientes (nome)
+VALUES ('Amanda');
+-- Atualizar dados
+UPDATE clientes
+SET nome = 'Ana'
+WHERE id = 1;
+-- Excluir dados
+DELETE FROM clientes
+WHERE id = 1;</code></pre>
+        <p>O WHERE limita quais registros serão atualizados ou excluídos.</p>
+    </article>
+    <article class="cartao">
+        <h2>3. Filtrar e ordenar</h2>
+        <pre><code>SELECT *
+FROM clientes
+WHERE idade >= 18
+ORDER BY nome ASC;</code></pre>
+        <ul>
+            <li>WHERE: filtra registros.</li>
+            <li>ORDER BY: ordena resultados.</li>
+            <li>GROUP BY: agrupa registros.</li>
+            <li>HAVING: filtra grupos.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>4. JOINs</h2>
+        <p>JOIN combina dados relacionados de duas ou mais tabelas.</p>
+        <pre><code>SELECT clientes.nome, pedidos.id
+FROM clientes
+INNER JOIN pedidos
+   ON clientes.id = pedidos.cliente_id;</code></pre>
+        <ul>
+            <li>INNER JOIN: somente correspondências.</li>
+            <li>LEFT JOIN: todos da tabela à esquerda e as correspondências da direita.</li>
+            <li>RIGHT JOIN: todos da tabela à direita e as correspondências da esquerda.</li>
+            <li>FULL JOIN: todas as linhas das duas tabelas, com correspondências quando existirem.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>5. Chaves e restrições</h2>
+        <ul>
+            <li>PRIMARY KEY: identifica cada registro.</li>
+            <li>FOREIGN KEY: relaciona tabelas.</li>
+            <li>UNIQUE: impede valores duplicados na restrição.</li>
+            <li>NOT NULL: impede valores nulos.</li>
+            <li>CHECK: valida uma condição.</li>
+            <li>DEFAULT: define um valor padrão.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>6. Índices e transações</h2>
+        <p>Índices podem acelerar consultas, mas consomem espaço e adicionam custo às alterações de dados.</p>
+        <pre><code>CREATE INDEX idx_cliente_nome
+ON clientes (nome);
+BEGIN;
+UPDATE contas
+SET saldo = saldo - 100
+WHERE id = 1;
+COMMIT;</code></pre>
+        <p>COMMIT confirma a transação. ROLLBACK desfaz as alterações ainda não confirmadas.</p>
+    </article>
+    <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
+</main>
+<footer>
+    <p>Beca BradAmanda © 2026</p>
+</footer>
+</body>
+</html>

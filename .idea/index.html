@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beca BackAmanda | Guia de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        Beca <span>BackAmanda</span>
+    </a>
+    <p>Meu guia de estudos de programação</p>
+</header>
+<main>
+    <!-- APRESENTAÇÃO -->
+    <section class="apresentacao">
+        <p class="destaque">MEU ESPAÇO DE APRENDIZADO</p>
+        <h1>...Aprender...Praticar...Evoluir...</h1>
+        <p>
+            Bem-vindos ao meu guia de estudos!
+            Aqui organizo meus resumos, exemplos de código
+            e aprendizados em desenvolvimento backend.
+        </p>
+    </section>
+    <!-- CARTÕES DE ESTUDOS -->
+    <section class="estudos">
+        <h2>Meus estudos</h2>
+        <p class="subtitulo">
+            Escolha um assunto para consultar meus resumos.
+        </p>
+        <!-- CAMPO DE BUSCA -->
+        <input
+                type="text"
+                id="busca"
+                placeholder="Buscar Java, Mockito, PostgreSQL..."
+                aria-label="Buscar assunto"
+        >
+        <div class="cartoes">
+            <!-- JAVA -->
+            <a href="java.html" class="cartao">
+                <span class="icone">☕</span>
+                <h3>Java</h3>
+                <p>
+                    Fundamentos, variáveis, métodos,
+                    orientação a objetos e Collections.
+                </p>
+                <span class="link-cartao">Acessar resumo →</span>
+            </a>
+            <!-- JUNIT E MOCKITO -->
+            <a href="junit-mockito.html" class="cartao">
+                <span class="icone">🧪</span>
+                <h3>JUnit e Mockito</h3>
+                <p>
+                    Testes unitários, annotations,
+                    mocks, stubs e verificações.
+                </p>
+                <span class="link-cartao">Acessar resumo →</span>
+            </a>
+            <!-- POSTGRESQL -->
+            <a href="postgresql.html" class="cartao">
+                <span class="icone">🗄️</span>
+                <h3>PostgreSQL</h3>
+                <p>
+                    SQL, consultas, JOINs, chaves,
+                    índices e transações.
+                </p>
+                <span class="link-cartao">Acessar resumo →</span>
+            </a>
+            <!-- SPRING BOOT -->
+            <a href="spring-boot.html" class="cartao">
+                <span class="icone">🌱</span>
+                <h3>Java com Spring Boot</h3>
+                <p>
+                    Annotations, Controller, Service,
+                    Repository, APIs REST e JPA.
+                </p>
+                <span class="link-cartao">Acessar resumo →</span>
+            </a>
+        </div>
+        <p id="mensagem-vazia" hidden>
+            Nenhum assunto encontrado. Tente outra palavra.
+        </p>
+    </section>
+</main>
+<!-- RODAPÉ -->
+<footer>
+    <p>
+        Feito com dedicação, código e vontade de aprender. 💚
+    </p>
+    <p>Beca BradAmanda © 2026</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

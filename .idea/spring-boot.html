@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot | Beca BradAmanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cabecalho">
+    <a href="index.html" class="logo">Beca <span>BradAmanda</span></a>
+    <p>Guia de desenvolvimento backend</p>
+</header>
+<main class="estudos">
+    <p class="destaque">MEUS RESUMOS</p>
+    <h1>🌱 Java com Spring Boot</h1>
+    <p class="subtitulo">Construindo aplicações e APIs REST.</p>
+    <article class="cartao">
+        <h2>1. O que é Spring Boot?</h2>
+        <p>É uma ferramenta baseada no Spring que facilita a criação de aplicações Java, reduzindo configurações manuais.</p>
+    </article>
+    <article class="cartao">
+        <h2>2. Annotations principais</h2>
+        <ul>
+            <li>@SpringBootApplication: configuração principal da aplicação.</li>
+            <li>@RestController: cria um controlador que normalmente retorna dados.</li>
+            <li>@RequestMapping: define um caminho base para as requisições.</li>
+            <li>@GetMapping: atende requisições GET.</li>
+            <li>@PostMapping: atende requisições POST.</li>
+            <li>@PutMapping: atende requisições PUT.</li>
+            <li>@DeleteMapping: atende requisições DELETE.</li>
+            <li>@Service: identifica uma classe de serviço.</li>
+            <li>@Repository: identifica uma classe de acesso a dados.</li>
+            <li>@Autowired: solicita injeção de dependência; em muitos casos, é preferível usar construtor.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>3. Camadas de uma aplicação</h2>
+        <ul>
+            <li>Controller: recebe requisições HTTP.</li>
+            <li>Service: concentra regras de negócio.</li>
+            <li>Repository: acessa e persiste dados.</li>
+            <li>Entity: representa uma entidade persistida.</li>
+            <li>DTO: transporta dados entre partes da aplicação.</li>
+        </ul>
+    </article>
+    <article class="cartao">
+        <h2>4. Exemplo de Controller</h2>
+        <pre><code>@RestController
+@RequestMapping("/clientes")
+public class ClienteController {
+   @GetMapping
+   public String listar() {
+       return "Lista de clientes";
+   }
+}</code></pre>
+        <p>Esse exemplo retorna um texto simples. Em uma API real, o Controller normalmente delega a operação para um Service.</p>
+    </article>
+    <article class="cartao">
+        <h2>5. O que é CRUD?</h2>
+        <ul>
+            <li>Create: criar registros.</li>
+            <li>Read: consultar registros.</li>
+            <li>Update: atualizar registros.</li>
+            <li>Delete: excluir registros.</li>
+        </ul>
+        <p>Essas operações são frequentemente associadas aos métodos HTTP POST, GET, PUT ou PATCH, e DELETE.</p>
+    </article>
+    <article class="cartao">
+        <h2>6. JPA e Hibernate</h2>
+        <p>JPA é uma especificação para persistência de objetos Java. Hibernate é uma implementação popular dessa especificação.</p>
+        <pre><code>@Entity
+public class Cliente {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
+   private String nome;
+}</code></pre>
+        <p>Uma entidade normalmente representa dados que podem ser armazenados em uma tabela do banco.</p>
+    </article>
+    <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
+</main>
+<footer>
+    <p>Beca BradAmanda © 2026</p>
+</footer>
+</body>
+</html>

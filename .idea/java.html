@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java | Beca BradAmanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        Beca <span>BradAmanda</span>
+    </a>
+    <p>Guia de estudos de Java</p>
+</header>
+<main class="estudos">
+    <p class="destaque">MEUS RESUMOS</p>
+    <h1>☕ Java</h1>
+    <p class="subtitulo">
+        Conceitos essenciais da linguagem Java.
+    </p>
+    <!-- 1. O QUE É JAVA -->
+    <article class="cartao">
+        <h2>1. O que é Java?</h2>
+        <p>
+            Java é uma linguagem de programação utilizada
+            para criar aplicações, sistemas backend e APIs.
+        </p>
+        <p>
+            É orientada a objetos e executada pela JVM
+            (Java Virtual Machine).
+        </p>
+    </article>
+    <!-- 2. VARIÁVEIS -->
+    <article class="cartao">
+        <h2>2. Variáveis e tipos de dados</h2>
+        <p>
+            Variáveis armazenam valores. O tipo define
+            qual categoria de dado será armazenada.
+        </p>
+        <pre><code>String nome = "Amanda";
+int idade = 44;
+double salario = 2500.00;
+boolean ativo = true;
+char letra = 'A';</code></pre>
+        <ul>
+            <li>String: textos.</li>
+            <li>int: números inteiros.</li>
+            <li>double: números decimais.</li>
+            <li>boolean: verdadeiro ou falso.</li>
+            <li>char: um caractere.</li>
+        </ul>
+    </article>
+    <!-- 3. OPERADORES -->
+    <article class="cartao">
+        <h2>3. Operadores</h2>
+        <pre><code>int soma = 10 + 5;
+int subtracao = 10 - 5;
+int multiplicacao = 10 * 5;
+int divisao = 10 / 5;
+int resto = 10 % 3;</code></pre>
+        <ul>
+            <li>+: adição.</li>
+            <li>-: subtração.</li>
+            <li>*: multiplicação.</li>
+            <li>/: divisão.</li>
+            <li>%: resto da divisão.</li>
+            <li>==: compara igualdade.</li>
+            <li>!=: compara diferença.</li>
+            <li>&&: E lógico.</li>
+            <li>||: OU lógico.</li>
+        </ul>
+    </article>
+    <!-- 4. CONDICIONAIS E REPETIÇÃO -->
+    <article class="cartao">
+        <h2>4. Condicionais e laços</h2>
+        <p>O if e o else executam códigos conforme uma condição.</p>
+        <pre><code>int idade = 18;
+if (idade >= 18) {
+   System.out.println("Maior de idade");
+} else {
+   System.out.println("Menor de idade");
+}</code></pre>
+        <p>O for e o while permitem repetir instruções.</p>
+        <pre><code>for (int i = 1; i <= 3; i++) {
+   System.out.println(i);
+}</code></pre>
+    </article>
+    <!-- 5. MÉTODOS -->
+    <article class="cartao">
+        <h2>5. Métodos</h2>
+        <p>
+            Métodos agrupam instruções para realizar uma tarefa.
+            Podem receber parâmetros e retornar valores.
+        </p>
+        <pre><code>public int somar(int a, int b) {
+   return a + b;
+}</code></pre>
+        <p>
+            <strong>return:</strong> devolve o resultado.
+            <strong>void:</strong> indica que o método não
+            retorna um valor.
+        </p>
+    </article>
+    <!-- 6. ORIENTAÇÃO A OBJETOS -->
+    <article class="cartao">
+        <h2>6. Orientação a objetos (POO)</h2>
+        <ul>
+            <li>
+                <strong>Classe:</strong> modelo para criar objetos.
+            </li>
+            <li>
+                <strong>Objeto:</strong> instância de uma classe.
+            </li>
+            <li>
+                <strong>Encapsulamento:</strong> protege e controla
+                o acesso aos dados.
+            </li>
+            <li>
+                <strong>Herança:</strong> permite que uma classe
+                herde características de outra.
+            </li>
+            <li>
+                <strong>Polimorfismo:</strong> permite diferentes
+                comportamentos por meio de uma mesma interface
+                ou classe base.
+            </li>
+            <li>
+                <strong>Abstração:</strong> destaca o essencial
+                e esconde detalhes de implementação.
+            </li>
+        </ul>
+        <pre><code>public class Pessoa {
+   private String nome;
+   public String getNome() {
+       return nome;
+   }
+   public void setNome(String nome) {
+       this.nome = nome;
+   }
+}</code></pre>
+    </article>
+    <!-- 7. MODIFICADORES -->
+    <article class="cartao">
+        <h2>7. Modificadores de acesso</h2>
+        <ul>
+            <li>
+                <strong>public:</strong> acessível de qualquer pacote,
+                respeitadas as regras de visibilidade do tipo.
+            </li>
+            <li>
+                <strong>private:</strong> acessível dentro da própria classe.
+            </li>
+            <li>
+                <strong>protected:</strong> acessível no mesmo pacote
+                e também em subclasses, conforme as regras de acesso.
+            </li>
+            <li>
+                <strong>static:</strong> pertence à classe, não a cada objeto.
+            </li>
+            <li>
+                <strong>final:</strong> impede alterações conforme
+                o contexto: variável, método ou classe.
+            </li>
+        </ul>
+    </article>
+    <!-- 8. COLLECTIONS -->
+    <article class="cartao">
+        <h2>8. Collections — List, Set e Map</h2>
+        <p>
+            Collections são estruturas usadas para armazenar
+            e manipular grupos de elementos.
+        </p>
+        <h3>List — Lista ordenada</h3>
+        <p>
+            Permite elementos duplicados e mantém a ordem
+            de inserção. O ArrayList permite acessar elementos
+            por índice.
+        </p>
+        <pre><code>List&lt;String&gt; nomes = new ArrayList&lt;&gt;();
+nomes.add("Amanda");
+nomes.add("Pedro");
+nomes.add("Amanda");
+System.out.println(nomes);
+// [Amanda, Pedro, Amanda]</code></pre>
+        <h3>ArrayList</h3>
+        <p>
+            Implementação de List baseada em array dinâmico.
+            É adequada para acessos frequentes por índice.
+        </p>
+        <h3>LinkedList</h3>
+        <p>
+            Implementação de List baseada em lista duplamente
+            encadeada. Mantém a ordem e permite duplicados.
+        </p>
+        <h3>Set — Conjunto sem duplicados</h3>
+        <p>
+            Não permite elementos duplicados segundo as regras
+            de igualdade de objetos.
+        </p>
+        <h3>HashSet</h3>
+        <p>
+            Não garante uma ordem específica de iteração.
+        </p>
+        <pre><code>Set&lt;String&gt; linguagens = new HashSet&lt;&gt;();
+linguagens.add("Java");
+linguagens.add("Python");
+linguagens.add("Java");
+// Java aparece apenas uma vez.
+// A ordem de exibição não é garantida.</code></pre>
+        <h3>LinkedHashSet</h3>
+        <p>
+            Não permite duplicados e mantém a ordem de inserção.
+        </p>
+        <pre><code>Set&lt;String&gt; nomes = new LinkedHashSet&lt;&gt;();
+nomes.add("Amanda");
+nomes.add("Pedro");
+nomes.add("Valentina");
+// [Amanda, Pedro, Valentina]</code></pre>
+        <h3>TreeSet</h3>
+        <p>
+            Não permite duplicados e organiza os elementos
+            em ordem natural ou conforme um Comparator.
+        </p>
+        <pre><code>Set&lt;String&gt; frutas = new TreeSet&lt;&gt;();
+frutas.add("Uva");
+frutas.add("Abacaxi");
+frutas.add("Banana");
+// [Abacaxi, Banana, Uva]</code></pre>
+        <h3>Map — Chave e valor</h3>
+        <p>
+            Armazena pares de chave e valor.
+            As chaves são únicas; valores podem se repetir.
+            Map não faz parte da hierarquia Collection.
+        </p>
+        <h3>HashMap</h3>
+        <p>
+            Armazena pares de chave e valor sem garantir
+            uma ordem específica de iteração.
+        </p>
+        <pre><code>Map&lt;String, Integer&gt; notas = new HashMap&lt;&gt;();
+notas.put("Amanda", 10);
+notas.put("Pedro", 8);
+notas.put("Valentina", 9);
+// A ordem de iteração não é garantida.</code></pre>
+        <h3>LinkedHashMap</h3>
+        <p>
+            Mantém, por padrão, a ordem de inserção das entradas.
+        </p>
+        <pre><code>Map&lt;String, Integer&gt; notas =
+   new LinkedHashMap&lt;&gt;();
+notas.put("Amanda", 10);
+notas.put("Pedro", 8);
+notas.put("Valentina", 9);
+// Iteração na ordem de inserção.</code></pre>
+        <h3>TreeMap</h3>
+        <p>
+            Organiza as entradas pela ordem natural das chaves
+            ou por um Comparator.
+        </p>
+        <pre><code>Map&lt;String, Integer&gt; notas = new TreeMap&lt;&gt;();
+notas.put("Pedro", 8);
+notas.put("Amanda", 10);
+notas.put("Valentina", 9);
+// Chaves: Amanda, Pedro, Valentina.</code></pre>
+        <h3>Resumo para memorizar</h3>
+        <ul>
+            <li><strong>ArrayList:</strong> mantém a ordem, aceita duplicados.</li>
+            <li><strong>LinkedList:</strong> mantém a ordem, aceita duplicados.</li>
+            <li><strong>HashSet:</strong> sem duplicados, sem ordem garantida.</li>
+            <li><strong>LinkedHashSet:</strong> sem duplicados, ordem de inserção.</li>
+            <li><strong>TreeSet:</strong> sem duplicados, elementos ordenados.</li>
+            <li><strong>HashMap:</strong> chave e valor, sem ordem garantida.</li>
+            <li><strong>LinkedHashMap:</strong> mantém a ordem de inserção.</li>
+            <li><strong>TreeMap:</strong> ordena pelas chaves.</li>
+        </ul>
+    </article>
+    <!-- 9. EXCEÇÕES -->
+    <article class="cartao">
+        <h2>9. Tratamento de exceções</h2>
+        <p>
+            Exceções representam situações que afetam
+            o fluxo normal do programa.
+        </p>
+        <pre><code>try {
+   int resultado = 10 / 0;
+} catch (ArithmeticException e) {
+   System.out.println("Erro matemático");
+} finally {
+   System.out.println("Finalizado");
+}</code></pre>
+        <ul>
+            <li>try: contém o código que pode gerar uma exceção.</li>
+            <li>catch: trata uma exceção compatível.</li>
+            <li>finally: bloco executado após try/catch, salvo situações excepcionais.</li>
+            <li>throw: lança uma exceção.</li>
+            <li>throws: declara exceções que um método pode propagar.</li>
+        </ul>
+    </article>
+    <!-- IMPORTS PARA OS EXEMPLOS DE COLLECTIONS -->
+    <article class="cartao">
+        <h2>10. Imports das Collections</h2>
+        <p>
+            Para usar as implementações dos exemplos anteriores,
+            normalmente precisamos importar as classes e interfaces.
+        </p>
+        <pre><code>import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.TreeMap;</code></pre>
+    </article>
+    <p>
+        <a href="index.html" class="link-cartao">
+            ← Voltar ao início
+        </a>
+    </p>
+</main>
+<footer>
+    <p>Feito com dedicação, código e vontade de aprender. 💚</p>
+    <p>Beca BradAmanda © 2026</p>
+</footer>
+</body>
+</html>
