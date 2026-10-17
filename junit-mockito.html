@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUnit e Mockito | Beca BradAmanda</title>
+    <title>JUnit e Mockito | Beca BackAmanda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="cabecalho">
-    <a href="index.html" class="logo">Beca <span>BradAmanda</span></a>
+    <a href="index.html" class="logo">Beca <span>BackAmanda</span></a>
     <p>Guia de testes automatizados</p>
 </header>
 <main class="estudos">
@@ -16,7 +16,20 @@
     <h1>🧪 JUnit e Mockito</h1>
     <p class="subtitulo">Como testar o código Java.</p>
     <article class="cartao">
-        <h2>1. O que é JUnit?</h2>
+        <h2>1. O que são testes unitários?</h2>
+        <p>Testam uma parte pequena do código (como um método ou classe), de preferência isolada.</p>
+        <pre><code>@Test
+
+void TestABC_When_Then() {
+    //Given
+    //When
+    //Then
+    //asserts
+
+}</code></pre>
+    </article>
+    <article class="cartao">
+        <h2>2. O que é JUnit?</h2>
         <p>JUnit é uma ferramenta para criar e executar testes automatizados em Java.</p>
         <pre><code>@Test
 
@@ -29,17 +42,19 @@ void deveSomarDoisNumeros() {
 }</code></pre>
     </article>
     <article class="cartao">
-        <h2>2. Annotations importantes</h2>
+        <h2>3. Annotations importantes</h2>
         <ul>
             <li>@Test: identifica um método de teste.</li>
             <li>@BeforeEach: executa antes de cada teste.</li>
             <li>@AfterEach: executa depois de cada teste.</li>
+            <li>@BeforeAll: executa uma vez antes dos testes da classe, normalmente deve ser static.</li>
+            <li>@AfterAll: executa uma vez depois dos testes da classe, normalmente deve ser static.</li>
             <li>@DisplayName: define um nome legível para o teste.</li>
             <li>@ParameterizedTest: executa um teste com diferentes parâmetros.</li>
         </ul>
     </article>
     <article class="cartao">
-        <h2>3. Assertions</h2>
+        <h2>4. Assertions</h2>
         <p>Verificam se o resultado obtido corresponde ao esperado.</p>
         <pre><code>assertEquals(10, resultado);
 
@@ -85,7 +100,7 @@ verify(servico).buscarNome();</code></pre>
     <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
 </main>
 <footer>
-    <p>Beca BradAmanda © 2026</p>
+    <p>Beca BackAmanda © 2026</p>
 </footer>
 </body>
 </html>

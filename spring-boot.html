@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot | Beca BradAmanda</title>
+    <title>Spring Boot | Beca BackAmanda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="cabecalho">
-    <a href="index.html" class="logo">Beca <span>BradAmanda</span></a>
+    <a href="index.html" class="logo">Beca <span>BackAmanda</span></a>
     <p>Guia de desenvolvimento backend</p>
 </header>
 <main class="estudos">
@@ -37,11 +37,12 @@
     <article class="cartao">
         <h2>3. Camadas de uma aplicação</h2>
         <ul>
-            <li>Controller: recebe requisições HTTP.</li>
-            <li>Service: concentra regras de negócio.</li>
-            <li>Repository: acessa e persiste dados.</li>
-            <li>Entity: representa uma entidade persistida.</li>
-            <li>DTO: transporta dados entre partes da aplicação.</li>
+            <li>Entity: representa os dados uma entidade persistida no banco.</li>
+            <li>DTO: transporta dados entre partes da aplicação, sem expor a entidade.</li>
+            <li>Mapper: transforma ema Entity <--> DTO e DTO <--> Entity.</li>
+            <li>Controller: recebe requisições HTTP, como GET, POST, PUT e DELETE.</li>
+            <li>Service: executa a lógica e concentra regras de negócio.</li>
+            <li>Repository: consulta, salva, atualiza e exclui dados no banco.</li>
         </ul>
     </article>
     <article class="cartao">
@@ -81,7 +82,7 @@ public class Cliente {
     <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
 </main>
 <footer>
-    <p>Beca BradAmanda © 2026</p>
+    <p>Beca BackAmanda © 2026</p>
 </footer>
 </body>
 </html>

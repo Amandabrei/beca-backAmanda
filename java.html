@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java | Beca BradAmanda</title>
+    <title>Java | Beca BackAmanda</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="cabecalho">
     <a href="index.html" class="logo">
-        Beca <span>BradAmanda</span>
+        Beca <span>BackAmanda</span>
     </a>
     <p>Guia de estudos de Java</p>
 </header>
@@ -21,15 +21,19 @@
     </p>
     <!-- 1. O QUE É JAVA -->
     <article class="cartao">
-        <h2>1. O que é Java?</h2>
+        <h2>1. O que é Java e como funciona?</h2>
         <p>
-            Java é uma linguagem de programação utilizada
+            Java é uma linguagem de programação orientada a objetos, utilizada
             para criar aplicações, sistemas backend e APIs.
         </p>
-        <p>
-            É orientada a objetos e executada pela JVM
-            (Java Virtual Machine).
+        <p>O código-fonte é compilado para bytecode, que é
+            executado pela JVM(Java Virtual Machine).
         </p>
+        <ul>
+            <li>JDK: ferramentas para desenvolver e compilar programas JAVA.</li>
+            <li>JRE: ambiente necessário para executar aplocações JAVA.</li>
+            <li>JVM: executa o bytecode.</li>
+        </ul>
     </article>
     <!-- 2. VARIÁVEIS -->
     <article class="cartao">
@@ -44,11 +48,32 @@ double salario = 2500.00;
 boolean ativo = true;
 char letra = 'A';</code></pre>
         <ul>
+            <p>
+            <h2>Tipos Primitivos</h2>
+            </p>
             <li>String: textos.</li>
             <li>int: números inteiros.</li>
             <li>double: números decimais.</li>
             <li>boolean: verdadeiro ou falso.</li>
             <li>char: um caractere.</li>
+            <li>byte: </li>
+            <li>short: </li>
+            <li>long: </li>
+            <li>float: </li>
+        </ul>
+        <ul>
+            <p>
+                <h2>Tipos de Referência e Conversões</h2>
+            </p>
+            <li><strong>Referência:</strong> váriaveis que apontam para objetos, como
+                String, arrays e instâncias.</li>
+            <li><strong>Conversão automática (widening):</strong> por exemplo, int para long.</li>
+            <li><strong>Conversão explícita (narrowing):</strong> pode perder informações, por exemplo
+                int n = (int) 8.7; resulta em 8.</li>
+            <li><strong>Wrapper classes:</strong> Integer, Double, Boolean, etc. São os primitivos como
+                objetos.</li>
+            <li><strong>Autoboxing/unboxing:</strong> conversão automática entre primitivo e wrapper,
+            por exemplo, int <--> Integer.</li>
         </ul>
     </article>
     <!-- 3. OPERADORES -->
@@ -98,6 +123,8 @@ if (idade >= 18) {
 }</code></pre>
         <p>
             <strong>return:</strong> devolve o resultado.
+        </p>
+        <p>
             <strong>void:</strong> indica que o método não
             retorna um valor.
         </p>
@@ -185,12 +212,12 @@ System.out.println(nomes);
 // [Amanda, Pedro, Amanda]</code></pre>
         <h3>ArrayList</h3>
         <p>
-            Implementação de List baseada em array dinâmico.
+            Permite elementos duplicados e implementação de List baseada em array dinâmico.
             É adequada para acessos frequentes por índice.
         </p>
         <h3>LinkedList</h3>
         <p>
-            Implementação de List baseada em lista duplamente
+            Permite elementos duplicados e implementação de List baseada em lista duplamente
             encadeada. Mantém a ordem e permite duplicados.
         </p>
         <h3>Set — Conjunto sem duplicados</h3>
@@ -200,7 +227,7 @@ System.out.println(nomes);
         </p>
         <h3>HashSet</h3>
         <p>
-            Não garante uma ordem específica de iteração.
+            Não permite duplicados, e não garante uma ordem específica de iteração.
         </p>
         <pre><code>Set&lt;String&gt; linguagens = new HashSet&lt;&gt;();
 linguagens.add("Java");
@@ -235,8 +262,8 @@ frutas.add("Banana");
         </p>
         <h3>HashMap</h3>
         <p>
-            Armazena pares de chave e valor sem garantir
-            uma ordem específica de iteração.
+            Armazena pares de chave(key), não aceita chaves duplicadas, mas aceita valores(value)
+            duplicados, sem garantir uma ordem específica de iteração.
         </p>
         <pre><code>Map&lt;String, Integer&gt; notas = new HashMap&lt;&gt;();
 notas.put("Amanda", 10);
@@ -324,7 +351,7 @@ import java.util.TreeMap;</code></pre>
 </main>
 <footer>
     <p>Feito com dedicação, código e vontade de aprender. 💚</p>
-    <p>Beca BradAmanda © 2026</p>
+    <p>Beca BackAmanda © 2026</p>
 </footer>
 </body>
 </html>
