@@ -3,371 +3,545 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java | Beca BackAmanda</title>
+    <title>Java | Meu Portfólio de Estudos</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="cabecalho">
-    <a href="index.html" class="logo">
-        Beca <span>BackAmanda</span>
-    </a>
-    <p>Guia de estudos de Java</p>
+    <h1>Java</h1>
+    <p>Conceitos essenciais da linguagem Java.</p>
 </header>
+
 <main class="estudos">
-    <p class="destaque">MEUS RESUMOS</p>
-    <h1>☕ Java</h1>
-    <p class="subtitulo">
-        Conceitos essenciais da linguagem Java.
-    </p>
 
     <article class="cartao">
-        <h2>1. O que é Java e como funciona?</h2>
-        <p>
-            Java é uma linguagem de programação orientada a objetos, utilizada
-            para criar aplicações, sistemas backend e APIs.
-        </p>
-        <p>O código-fonte é compilado para bytecode, que é
-            executado pela JVM(Java Virtual Machine).
-        </p>
+        <h2>01. O que é e como funciona?</h2>
+
+        <h3>Variáveis e tipos primitivos</h3>
+        <p>Java é uma linguagem de programação orientada a objetos, utilizada para criar aplicações,
+            sistemas backend e APIs.</p>
+        <p>O código-fonte é compilado para bytecode, que é executado pela JVM(Java Virtual Machine).</p>
         <ul>
-            <li><u>JDK</u>: ferramentas para desenvolver e compilar programas JAVA.</li>
-            <li><u>JRE</u>: ambiente necessário para executar aplocações JAVA.</li>
-            <li><u>JVM</u>: executa o bytecode.</li>
+            <li><code>JDK</code>: ferramentas para desenvolver e compilar programas Java.</li>
+            <li><code>JRE</code>: ambiente necessário para executar aplicações Java.</li>
+            <li><code>JVM</code>: executa o bytecode.</li>
         </ul>
     </article>
 
     <article class="cartao">
-        <h2>2. Variáveis e tipos de dados</h2>
-        <p>
-            Variáveis armazenam valores. O tipo define
-            qual categoria de dado será armazenada.
-        </p>
-        <pre><code>String nome = "Amanda";
-int idade = 44;
-double salario = 2500.00;
-boolean ativo = true;
-char letra = 'A';</code></pre>
+        <h2>02. Fundamentos da linguagem</h2>
+        <p>Variáveis armazenam dados. Java possui oito tipos primitivos:</p>
         <ul>
-            <p>
-            <h2>Tipos Primitivos</h2>
-            </p>
-            <li><strong>String:</strong> textos.</li>
-            <li><strong>int:</strong> números inteiros.</li>
-            <li><strong>double:</strong> números decimais.</li>
-            <li><strong>boolean:</strong> verdadeiro ou falso.</li>
-            <li><strong>char:</strong> um caractere.</li>
-            <li><strong>byte:</strong> números inteiros pequenos, de -128 a 127.</li>
-            <li><strong>short:</strong> números inteiros de -32.768 a 32.767.</li>
-            <li><strong>long:</strong> números inteiros longos.</li>
-            <li><strong>float:</strong> números decimais com menor precisão que double.</li>
+            <li><code>byte</code>, <code>short</code>, <code>int</code> e <code>long</code>: números inteiros.</li>
+            <li><code>float</code> e <code>double</code>: números decimais.</li>
+            <li><code>char</code>: um caractere.</li>
+            <li><code>boolean</code>: verdadeiro ou falso.</li>
         </ul>
-        <ul>
-            <p>
-                <h2>Tipos de Referência e Conversões</h2>
-            </p>
-            <li><strong>Referência:</strong> váriaveis que apontam para objetos, como
-                String, arrays e instâncias.</li>
-            <li><strong>Conversão automática (widening):</strong> por exemplo, int para long.</li>
-            <li><strong>Conversão explícita (narrowing):</strong> pode perder informações, por exemplo
-                int n = (int) 8.7; resulta em 8.</li>
-            <li><strong>Wrapper classes:</strong> Integer, Double, Boolean, etc. São os primitivos como
-                objetos.</li>
-            <li><strong>Autoboxing/unboxing:</strong> conversão automática entre primitivo e wrapper,
-            por exemplo, int <--> Integer.</li>
-        </ul>
-    </article>
 
-    <article class="cartao">
-        <h2>3. Operadores</h2>
+        <pre><code>int idade = 40;
+double altura = 1.55;
+char letra = 'A';
+boolean aprovado = true;</code></pre>
+
+        <h3>Entrada, processamento e saída de dados</h3>
+        <p>Um programa recebe dados, realiza operações e apresenta o resultado.</p>
+        <pre><code>Scanner sc = new Scanner(System.in);
+
+System.out.print("Digite seu nome: ");
+String nome = sc.nextLine();
+
+System.out.println("Olá, " + nome);</code></pre>
+
+        <h3>Operadores aritméticos</h3>
+        <p>Realizam cálculos matemáticos:</p>
         <pre><code>int soma = 10 + 5;
 int subtracao = 10 - 5;
 int multiplicacao = 10 * 5;
 int divisao = 10 / 5;
 int resto = 10 % 3;</code></pre>
-        <ul>
-            <li>+: adição.</li>
-            <li>-: subtração.</li>
-            <li>*: multiplicação.</li>
-            <li>/: divisão.</li>
-            <li>%: resto da divisão.</li>
-            <li>==: compara igualdade.</li>
-            <li>!=: compara diferença.</li>
-            <li>&&: E lógico.</li>
-            <li>||: OU lógico.</li>
-        </ul>
+
+        <p>O operador <code>%</code> retorna o resto da divisão. A divisão entre inteiros também retorna um inteiro.</p>
+
+        <h3>Atribuição acumulativa</h3>
+        <p>Atualiza o valor de uma variável usando o próprio valor.</p>
+        <pre><code>int total = 10;
+total += 5; // total = 15
+total -= 2; // total = 13
+total *= 2; // total = 26</code></pre>
+
+        <h3>Expressões comparativas e lógicas</h3>
+        <p>Comparações retornam <code>boolean</code>. Operadores lógicos combinam condições.</p>
+        <pre><code>int idade = 20;
+
+boolean maior = idade >= 18;
+boolean valido = idade >= 18 && idade < 60;
+boolean fora = idade < 18 || idade > 60;
+boolean negado = !maior;</code></pre>
+
+        <h3>Funções matemáticas</h3>
+        <p>A classe <code>Math</code> disponibiliza métodos matemáticos.</p>
+        <pre><code>Math.sqrt(25); // raiz quadrada: 5
+Math.pow(2, 3); // potência: 8
+Math.abs(-10); // valor absoluto: 10
+Math.round(4.6); // arredonda: 5
+Math.max(5, 9); // maior valor: 9</code></pre>
+
+        <h3>Operadores bitwise</h3>
+        <p>Manipulam os bits de números inteiros.</p>
+        <pre><code>int a = 5; // 0101
+int b = 3; // 0011
+
+int and = a & b; // 0001 = 1
+int or = a | b; // 0111 = 7
+int xor = a ^ b; // 0110 = 6
+int shift = a << 1; // 1010 = 10</code></pre>
+
+        <h3>Strings</h3>
+        <p><code>String</code> representa textos. É possível consultar e transformar seu conteúdo.</p>
+        <pre><code>String texto = "Java"
+
+texto.length(); // tamanho
+texto.toUpperCase(); // JAVA
+texto.toLowerCase(); // java
+texto.substring(0, 2); // Ja
+texto.contains("av"); // true
+texto.equals("Java"); // true</code></pre>
+
+        <p><strong>Atenção:</strong> Strings são imutáveis. Métodos como <code>toUpperCase()</code> retornam uma nova String.</p>
     </article>
 
     <article class="cartao">
-        <h2>4. Condicionais e laços</h2>
-        <p>O if e o else executam códigos conforme uma condição.</p>
-        <pre><code>int idade = 18;
+        <h2>03. Estruturas de controle</h2>
+
+        <h3>Condicional if e else</h3>
+        <p>Executa um bloco conforme uma condição.</p>
+        <pre><code>int idade = 20;
+
 if (idade >= 18) {
-   System.out.println("Maior de idade");
+System.out.println("Maior de idade");
 } else {
-   System.out.println("Menor de idade");
+System.out.println("Menor de idade");
 }</code></pre>
-        <p>O for e o while permitem repetir instruções.</p>
-        <pre><code>for (int i = 1; i <= 3; i++) {
-   System.out.println(i);
-}</code></pre>
-    </article>
 
-    <article class="cartao">
-        <h2>5. Métodos</h2>
-        <p>
-            Métodos agrupam instruções para realizar uma tarefa.
-            Podem receber parâmetros e retornar valores.
-        </p>
-        <pre><code>public int somar(int a, int b) {
-   return a + b;
-}</code></pre>
-        <p>
-            <strong>return:</strong> devolve o resultado.
-        </p>
-        <p>
-            <strong>void:</strong> indica que o método não
-            retorna um valor.
-        </p>
-    </article>
+        <h3>Switch case</h3>
+        <p>Seleciona uma alternativa entre vários casos.</p>
+        <pre><code>int dia = 2;
 
-    <article class="cartao">
-        <h2>6. Orientação a objetos (POO)</h2>
+switch (dia) {
+case 1:
+System.out.println("Domingo");
+break;
+case 2:
+System.out.println("Segunda");
+break;
+default:
+System.out.println("Outro dia");
+}</code></pre>
+
+        <h3>Operador ternário</h3>
+        <p>Uma forma compacta de escolher entre dois valores com base em uma condição.</p>
+        <pre><code>int idade = 20;
+
+String resultado =
+idade >= 18 ? "Maior" : "Menor"</code></pre>
+
+        <p>Sintaxe: <code>condição ? valorSeVerdadeiro : valorSeFalso</code>.</p>
+
+        <h3>Estruturas repetitivas</h3>
+        <p>Executam um bloco de código repetidamente.</p>
+        <pre><code>// for: quando conhecemos a repetição
+for (int i = 0; i < 5; i++) {
+System.out.println(i);
+}
+
+// while: verifica antes de executar
+int i = 0;
+while (i < 5) {
+i++;
+}
+
+// do-while: executa pelo menos uma vez
+do {
+i--;
+} while (i > 0);</code></pre>
+
+        <h3>Escopo e inicialização</h3>
+        <p>Escopo é a região em que uma variável pode ser acessada. Variáveis locais precisam ser inicializadas antes do uso.</p>
+        <pre><code>int numero = 10;
+
+if (numero > 0) {
+int resultado = numero * 2;
+}
+// resultado não existe fora do bloco</code></pre>
+
+        <h3>Convenções e restrições</h3>
         <ul>
-            <li>
-                <strong>Classe:</strong> modelo para criar objetos.
-            </li>
-            <li>
-                <strong>Objeto:</strong> instância de uma classe.
-            </li>
-            <li>
-                <strong>Encapsulamento:</strong> protege e controla
-                o acesso aos dados.
-            </li>
-            <li>
-                <strong>Herança:</strong> permite que uma classe
-                herde características de outra.
-            </li>
-            <li>
-                <strong>Polimorfismo:</strong> permite diferentes
-                comportamentos por meio de uma mesma interface
-                ou classe base.
-            </li>
-            <li>
-                <strong>Abstração:</strong> destaca o essencial
-                e esconde detalhes de implementação.
-            </li>
-        </ul>
-        <pre><code>public class Pessoa {
-   private String nome;
-   public String getNome() {
-       return nome;
-   }
-   public void setNome(String nome) {
-       this.nome = nome;
-   }
-}</code></pre>
-    </article>
-
-    <article class="cartao">
-        <h2>7. Modificadores de acesso</h2>
-        <ul>
-            <li>
-                <strong>public:</strong> acessível de qualquer pacote,
-                respeitadas as regras de visibilidade do tipo.
-            </li>
-            <li>
-                <strong>private:</strong> acessível dentro da própria classe.
-            </li>
-            <li>
-                <strong>protected:</strong> acessível no mesmo pacote
-                e também em subclasses, conforme as regras de acesso.
-            </li>
-            <li>
-                <strong>static:</strong> pertence à classe, não a cada objeto.
-            </li>
-            <li>
-                <strong>final:</strong> impede alterações conforme
-                o contexto: variável, método ou classe.
-            </li>
+            <li>Classes: <code>PascalCase</code>, por exemplo <code>Cliente</code>.</li>
+            <li>Variáveis e métodos: <code>camelCase</code>, por exemplo <code>calcularTotal()</code>.</li>
+            <li>Constantes: geralmente <code>MAIUSCULAS_COM_UNDERSCORE</code>.</li>
+            <li>Java diferencia letras maiúsculas e minúsculas.</li>
+            <li>Palavras reservadas não podem ser usadas como identificadores.</li>
         </ul>
     </article>
 
     <article class="cartao">
-        <h2>8. Comparable, Comparator, equals e hasCode</h2>
-        <ul>
-            <li><strong>Comparable:</strong> define a ordem natural dentro da própria classe,
-                pelo método compareTo().
-            </li>
-            <li><strong>Comparator:</strong> cria uma regra de comparação externa, pelo método compare(), pode usar Lambda.
-            </li>
-            <li><strong>Equals:</strong> verifica igualdade lógica, equals().
-            </li>
-            <li><strong>HasCode:</strong> gera um número usado por estruturas hash para localizar objetos, hasCode().
-            </li>
-            <li>Importante: se dois objetos são iguais por equals(), precisam ter o mesmo hasCode().
-                O inverso não é obrigatório. Se uma classe for usada em HasSet/HasMap, implemente corretamente os dois métodos,
-                considerando os campos que definem igualdade.</li>
-        </ul>
-    </article>
+        <h2>04. Programação Orientada a Objetos (POO)</h2>
 
+        <h3>Classes, objetos e instanciação</h3>
+        <p>Classe é um modelo.</p>
+        <p>Objeto é uma instância criada a partir desse modelo.</p>
+        <pre><code>public class Cliente {
+    String nome;
+    int idade;
 
-    <article class="cartao">
-        <h2>9. Collections — List, Set e Map</h2>
-        <p>
-            Collections são estruturas usadas para armazenar
-            e manipular grupos de elementos.
-        </p>
-        <h3>List — Lista ordenada</h3>
-        <p>
-            Permite elementos duplicados e mantém a ordem
-            de inserção. O ArrayList permite acessar elementos
-            por índice.
-        </p>
-        <pre><code>List&lt;String&gt; nomes = new ArrayList&lt;&gt;();
-nomes.add("Amanda");
-nomes.add("Pedro");
-nomes.add("Amanda");
-System.out.println(nomes);
-// [Amanda, Pedro, Amanda]</code></pre>
-        <h3>ArrayList</h3>
-        <p>
-            Permite elementos duplicados e implementação de List baseada em array dinâmico.
-            É adequada para acessos frequentes por índice.
-        </p>
-        <h3>LinkedList</h3>
-        <p>
-            Permite elementos duplicados e implementação de List baseada em lista duplamente
-            encadeada. Mantém a ordem e permite duplicados.
-        </p>
-        <h3>Set — Conjunto sem duplicados</h3>
-        <p>
-            Não permite elementos duplicados segundo as regras
-            de igualdade de objetos.
-        </p>
-        <h3>HashSet</h3>
-        <p>
-            Não permite duplicados, e não garante uma ordem específica de iteração.
-        </p>
-        <pre><code>Set&lt;String&gt; linguagens = new HashSet&lt;&gt;();
-linguagens.add("Java");
-linguagens.add("Python");
-linguagens.add("Java");
-// Java aparece apenas uma vez.
-// A ordem de exibição não é garantida.</code></pre>
-        <h3>LinkedHashSet</h3>
-        <p>
-            Não permite duplicados e mantém a ordem de inserção.
-        </p>
-        <pre><code>Set&lt;String&gt; nomes = new LinkedHashSet&lt;&gt;();
-nomes.add("Amanda");
-nomes.add("Pedro");
-nomes.add("Valentina");
-// [Amanda, Pedro, Valentina]</code></pre>
-        <h3>TreeSet</h3>
-        <p>
-            Não permite duplicados e organiza os elementos
-            em ordem natural ou conforme um Comparator.
-        </p>
-        <pre><code>Set&lt;String&gt; frutas = new TreeSet&lt;&gt;();
-frutas.add("Uva");
-frutas.add("Abacaxi");
-frutas.add("Banana");
-// [Abacaxi, Banana, Uva]</code></pre>
-        <h3>Map — Chave e valor</h3>
-        <p>
-            Armazena pares de chave e valor.
-            As chaves são únicas; valores podem se repetir.
-            Map não faz parte da hierarquia Collection.
-        </p>
-        <h3>HashMap</h3>
-        <p>
-            Armazena pares de chave(key), não aceita chaves duplicadas, mas aceita valores(value)
-            duplicados, sem garantir uma ordem específica de iteração.
-        </p>
-        <pre><code>Map&lt;String, Integer&gt; notas = new HashMap&lt;&gt;();
-notas.put("Amanda", 10);
-notas.put("Pedro", 8);
-notas.put("Valentina", 9);
-// A ordem de iteração não é garantida.</code></pre>
-        <h3>LinkedHashMap</h3>
-        <p>
-            Mantém, por padrão, a ordem de inserção das entradas.
-        </p>
-        <pre><code>Map&lt;String, Integer&gt; notas =
-   new LinkedHashMap&lt;&gt;();
-notas.put("Amanda", 10);
-notas.put("Pedro", 8);
-notas.put("Valentina", 9);
-// Iteração na ordem de inserção.</code></pre>
-        <h3>TreeMap</h3>
-        <p>
-            Organiza as entradas pela ordem natural das chaves
-            ou por um Comparator.
-        </p>
-        <pre><code>Map&lt;String, Integer&gt; notas = new TreeMap&lt;&gt;();
-notas.put("Pedro", 8);
-notas.put("Amanda", 10);
-notas.put("Valentina", 9);
-// Chaves: Amanda, Pedro, Valentina.</code></pre>
-        <h3>Resumo para memorizar</h3>
-        <ul>
-            <li><strong>ArrayList:</strong> mantém a ordem, aceita duplicados.</li>
-            <li><strong>LinkedList:</strong> mantém a ordem, aceita duplicados.</li>
-            <li><strong>HashSet:</strong> sem duplicados, sem ordem garantida.</li>
-            <li><strong>LinkedHashSet:</strong> sem duplicados, ordem de inserção.</li>
-            <li><strong>TreeSet:</strong> sem duplicados, elementos ordenados.</li>
-            <li><strong>HashMap:</strong> chave e valor, sem ordem garantida.</li>
-            <li><strong>LinkedHashMap:</strong> mantém a ordem de inserção.</li>
-            <li><strong>TreeMap:</strong> ordena pelas chaves.</li>
-        </ul>
-    </article>
+    void apresentar() {
+        System.out.println(nome);
+    }
+}
 
-    <article class="cartao">
-        <h2>10. Generics, Type Safety e Wildcards</h2>
-        <lu>
-            Generics: permitem definir o tipo que uma classe ou coleção aceita, aumentando a segurança e reduzindo casts.
+// Criando um objeto:
+Cliente cliente = new Cliente();
+cliente.nome = "Amanda"
+cliente.apresentar();</code></pre>
 
-        </lu>
-        <pre><code>List<String> {
-   int resultado = 10 / 0;
-} catch (ArithmeticException e) {
-   System.out.println("Erro matemático");
-} finally {
-   System.out.println("Finalizado");
+        <h3>Atributos, métodos e membros estáticos</h3>
+        <p>Atributos representam características.</p>
+        <p>Métodos representam comportamentos. </p>
+        <p>Membros <code>static</code> pertencem à classe, e não a cada objeto.</p>
+        <pre><code>public class Contador {
+    static int total = 0;
+
+    Contador() {
+        total++;
+    }
 }</code></pre>
+
+        <h3>Construtores e sobrecarga</h3>
+        <p>Construtores inicializam objetos. </p>
+        <p>Sobrecarga permite ter métodos ou construtores com o mesmo nome, mas parâmetros diferentes.</p>
+        <pre><code>public class Produto {
+    String nome;
+    double preco;
+
+    Produto(String nome) {
+        this.nome = nome;
+    }
+
+    Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+}</code></pre>
+
+        <h3>Modificadores de acesso</h3>
         <ul>
-            <li><strong><T></T></strong> .</li>
-            <li><strong>catch:</strong> trata uma exceção compatível.</li>
-            <li><strong>finally:</strong> bloco executado após try/catch, salvo situações excepcionais.</li>
-            <li><strong>throw:</strong> lança uma exceção.</li>
-            <li><strong>throws:</strong> declara exceções que um método pode propagar.</li>
+            <li><code>private</code>: acessível dentro da própria classe.</li>
+            <li><code>public</code>: acessível de qualquer lugar permitido.</li>
+            <li><code>protected</code>: acessível no pacote e por subclasses.</li>
+            <li>Sem modificador: acesso de pacote.</li>
         </ul>
+
+        <h3>Tipos primitivos e tipos de referência</h3>
+        <p>Primitivos armazenam valores como números e booleanos. </p>
+        <p>Variáveis de referência apontam para objetos.</p>
+        <pre><code>int numero = 10;
+Cliente pessoa = new Cliente();
+
+Cliente outra = pessoa; // referência ao mesmo objeto</code></pre>
+
+        <p>Variáveis de referência podem receber <code>null</code>, que significa ausência de referência a um objeto.</p>
+
+        <h3>Valores padrão e Wrapper</h3>
+        <p>Atributos recebem valores padrão, como <code>0</code>, <code>false</code> ou <code>null</code>. Variáveis locais não recebem valores padrão automaticamente.</p>
+        <p>Classes Wrapper representam tipos primitivos como objetos: <code>Integer</code>, <code>Double</code>, <code>Boolean</code> e outras.</p>
+        <pre><code>int numero = 10;
+
+Integer objeto = numero; // boxing
+int valor = objeto; // unboxing</code></pre>
+
+        <h3>Garbage Collector</h3>
+        <p>O Garbage Collector (GC) recupera memória ocupada por objetos que não são mais alcançáveis. Sair do escopo de uma variável não significa que o objeto será imediatamente desalocado.</p>
+
+        <h3>Herança e polimorfismo</h3>
+        <p>Herança permite que uma classe reutilize características de outra. </p>
+        <p>Polimorfismo permite tratar objetos diferentes por um tipo comum.</p>
+        <pre><code>class Animal {
+    void emitirSom() {
+        System.out.println("Som");
+    }
+}
+
+class Cachorro extends Animal {
+    @Override
+    void emitirSom() {
+        System.out.println("Au au");
+    }
+}
+
+Animal animal = new Cachorro();
+animal.emitirSom(); // Au au</code></pre>
+
+        <h3>Upcasting e downcasting</h3>
+        <p>Upcasting trata um objeto de uma subclasse como o tipo da superclasse.</p>
+        <p>Downcasting converte a referência de volta para um tipo mais específico e exige cuidado.</p>
+        <pre><code>Animal animal = new Cachorro(); // upcasting
+
+if (animal instanceof Cachorro) {
+    Cachorro cachorro = (Cachorro) animal;
+}</code></pre>
+
+        <h3>final e classes abstratas</h3>
+        <ul>
+            <li><code>final</code> em variável: impede reatribuição.</li>
+            <li><code>final</code> em método: impede sobreposição.</li>
+            <li><code>final</code> em classe: impede herança.</li>
+            <li>Classe abstrata não pode ser instanciada diretamente.</li>
+            <li>Método abstrato declara um comportamento que a subclasse deve implementar.</li>
+        </ul>
+
+        <h3>Interfaces, IoC e injeção de dependência</h3>
+        <p>Interface define um contrato.</p>
+        <p>Inversão de Controle (IoC) transfere a responsabilidade de controlar dependências para outro componente ou framework.</p>
+        <p>Injeção de Dependência (DI) fornece a uma classe os objetos de que ela precisa.</p>
+        <pre><code>interface Notificador {
+    void enviar(String mensagem);
+}
+
+class EmailNotificador implements Notificador {
+    public void enviar(String mensagem) {
+        System.out.println(mensagem);
+    }
+}
+
+class Servico {
+    private final Notificador notificador;
+
+    Servico(Notificador notificador) {
+        this.notificador = notificador;
+    }
+}</code></pre>
+
+        <p>Interfaces também podem possuir métodos <code>default</code>, que oferecem uma implementação padrão.</p>
+
+        <h3>UML e categorias de classes</h3>
+        <p>UML representa visualmente classes, atributos, métodos e relacionamentos.</p>
+        <p>Classes podem ser organizadas por responsabilidade, como entidades, serviços, controladores e classes utilitárias.</p>
     </article>
 
     <article class="cartao">
-        <h2>11. Tratamento de exceções</h2>
-        <p>
-            Exceções representam situações que afetam
-            o fluxo normal do programa.
-        </p>
+        <h2>05. Arrays, listas e datas</h2>
+
+        <h3>Vetores e matrizes</h3>
+        <p>Arrays armazenam uma quantidade fixa de elementos do mesmo tipo. O índice começa em zero.</p>
+        <pre><code>int[] numeros = {10, 20, 30};
+
+System.out.println(numeros[0]); // 10
+
+int[][] matriz = {
+    {1, 2},
+    {3, 4}
+};
+
+System.out.println(matriz[1][0]); // 3</code></pre>
+
+        <h3>Enumerações</h3>
+        <p><code>enum</code> define um conjunto fixo de constantes.</p>
+        <pre><code>enum Status {
+    PENDENTE,
+    APROVADO,
+    CANCELADO
+}
+
+Status pedido = Status.APROVADO;</code></pre>
+
+        <h3>Data e hora — ISO 8601</h3>
+        <p>ISO 8601 é um padrão para representar datas e horários, como <code>2026-10-17T10:30:00Z</code>.</p>
+        <pre><code>import java.time.Instant;
+import java.time.LocalDate;
+
+Instant agora = Instant.now();
+LocalDate hoje = LocalDate.now();</code></pre>
+
+        <p><code>Instant</code> representa um instante na linha do tempo, normalmente em UTC.</p>
+        <p><code>LocalDate</code> representa apenas uma data, sem horário.</p>
+
+        <h3>Calendar</h3>
+        <p><code>Calendar</code> é uma API antiga de datas. Em código moderno, prefira as classes de <code>java.time</code>, como <code>LocalDate</code>, <code>LocalDateTime</code> e <code>Instant</code>.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>06. Exceções e arquivos</h2>
+
+        <h3>Tratamento de exceções</h3>
+        <p>Exceções representam situações que interrompem o fluxo normal do programa.</p>
         <pre><code>try {
-   int resultado = 10 / 0;
+    int resultado = 10 / 0;
 } catch (ArithmeticException e) {
-   System.out.println("Erro matemático");
+    System.out.println("Não é possível dividir por zero");
 } finally {
-   System.out.println("Finalizado");
+    System.out.println("Finalizando");
 }</code></pre>
+
+        <p>Exceções verificadas (checked) precisam ser tratadas ou declaradas.</p>
+        <p>Exceções não verificadas (unchecked) incluem subclasses de <code>RuntimeException</code>.</p>
+
+        <h3>Manipulação de arquivos</h3>
+        <p>A classe <code>File</code> representa caminhos e informações de arquivos. Para leitura e escrita, existem classes como <code>FileWriter</code>, <code>BufferedReader</code> e <code>BufferedWriter</code>.</p>
+        <pre><code>File arquivo = new File("dados.txt");
+
+try (BufferedWriter writer =
+new BufferedWriter(new FileWriter(arquivo))) {
+    writer.write("Estudando Java");
+}</code></pre>
+
+        <p>O <code>BufferedReader</code> permite ler texto de forma eficiente, linha por linha.</p>
+        <p>O try-with-resources fecha os recursos automaticamente.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>07. Generics e Collections Framework</h2>
+
+        <h3>Generics e curingas</h3>
+        <p>Generics permitem definir classes, interfaces e métodos que trabalham com tipos parametrizados, oferecendo segurança de tipos.</p>
+        <pre><code>List&lt;String&gt; nomes = new ArrayList<>();
+nomes.add("Amanda");
+
+// Wildcard: lista de algum tipo de Number
+List&lt;? extends Number&gt; valores;</code></pre>
+
+        <p><code>? extends T</code> representa um tipo T ou subtipo. <code>? super T</code> representa T ou um supertipo.</p>
+
+        <h3>List, Set e Map</h3>
         <ul>
-            <li><strong>try:</strong> contém o código que pode gerar uma exceção.</li>
-            <li><strong>catch:</strong> trata uma exceção compatível.</li>
-            <li><strong>finally:</strong> bloco executado após try/catch, salvo situações excepcionais.</li>
-            <li><strong>throw:</strong> lança uma exceção.</li>
-            <li><strong>throws:</strong> declara exceções que um método pode propagar.</li>
+            <li><code>List</code>: mantém uma sequência de elementos, permite duplicados e acesso por índice.</li>
+            <li><code>Set</code>: não permite elementos duplicados segundo a regra de igualdade da coleção.</li>
+            <li><code>Map</code>: associa chaves a valores; cada chave é única.</li>
         </ul>
+        <pre><code>List&lt;String&gt; lista = new ArrayList<>();
+lista.add("Java");
+lista.add("Java");
+
+Set&lt;String&gt; conjunto = new HashSet<>();
+conjunto.add("Java");
+conjunto.add("Java"); // não adiciona duplicado
+
+Map&lt;Integer, String&gt; mapa = new HashMap<>();
+mapa.put(1, "Amanda");
+mapa.get(1); // Amanda</code></pre>
+
+        <p><strong>Observação:</strong> <code>HashSet</code> e <code>HashMap</code> não garantem uma ordem específica de iteração.</p>
+
+        <h3>equals() e hashCode()</h3>
+        <p><code>equals()</code> define quando dois objetos são considerados iguais.</p>
+        <p><code>hashCode()</code> fornece um código usado por coleções baseadas em hash. Se dois objetos são iguais por <code>equals()</code>, devem ter o mesmo <code>hashCode()</code>.</p>
+
+        <h3>Comparable e Comparator</h3>
+        <p><code>Comparable</code> define a ordenação natural dentro da própria classe, usando <code>compareTo()</code>.</p>
+        <p><code>Comparator</code> define uma regra de comparação externa, usando <code>compare()</code>.</p>
+        <pre><code>List&lt;String&gt; nomes = new ArrayList<>();
+nomes.add("Valentina");
+nomes.add("Pedro");
+
+nomes.sort(Comparator.naturalOrder());</code></pre>
+    </article>
+
+    <article class="cartao">
+        <h2>08. Programação Funcional</h2>
+
+        <h3>Expressões lambda e interfaces funcionais</h3>
+        <p>Uma expressão lambda representa uma implementação concisa de uma interface funcional, que possui um único método abstrato.</p>
+        <pre><code>Runnable tarefa =
+() -> System.out.println("Executando");
+
+tarefa.run();</code></pre>
+
+        <h3>Predicate, Consumer e Function</h3>
+        <ul>
+            <li><code>Predicate&lt;T&gt;</code>: recebe um valor e retorna <code>true</code> ou <code>false</code>.</li>
+            <li><code>Consumer&lt;T&gt;</code>: recebe um valor e executa uma ação, sem retornar resultado.</li>
+            <li><code>Function&lt;T, R&gt;</code>: recebe um valor T e retorna um resultado R.</li>
+        </ul>
+        <pre><code>Predicate&lt;Integer&gt; par =
+n -> n % 2 == 0;
+
+Consumer&lt;String&gt; imprimir =
+nome -> System.out.println(nome);
+
+Function&lt;String, Integer&gt; tamanho =
+texto -> texto.length();</code></pre>
+
+        <h3>Stream API e pipeline</h3>
+        <p>Stream permite processar dados de uma coleção em etapas.</p>
+        <p>Operações intermediárias transformam ou filtram o fluxo.</p>
+        <p>Operações terminais produzem um resultado ou encerram o processamento.</p>
+        <pre><code>List&lt;Integer&gt; numeros =
+List.of(1, 2, 3, 4, 5, 6);
+
+List&lt;Integer&gt; resultado = numeros.stream()
+.filter(n -> n % 2 == 0) // intermediária
+.map(n -> n * 10) // intermediária
+.toList(); // terminal</code></pre>
+
+        <p>Exemplos de operações intermediárias: <code>filter()</code>, <code>map()</code>, <code>sorted()</code> e <code>distinct()</code>.</p>
+        <p>Exemplos de operações terminais: <code>forEach()</code>, <code>collect()</code>, <code>reduce()</code>, <code>count()</code> e <code>toList()</code>.</p>
+        <p>O pipeline é a sequência de operações conectadas que processa os elementos.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>09. JDBC — Acesso a banco de dados</h2>
+
+        <h3>O que é JDBC?</h3>
+        <p>JDBC (Java Database Connectivity) é uma API que permite que aplicações Java se conectem a bancos de dados relacionais e executem comandos SQL.</p>
+
+        <h3>Principais componentes</h3>
+        <ul>
+            <li><code>Connection</code>: representa a conexão com o banco.</li>
+            <li><code>PreparedStatement</code>: executa SQL com parâmetros.</li>
+            <li><code>ResultSet</code>: permite percorrer os resultados de uma consulta.</li>
+        </ul>
+
+        <h3>Exemplo de consulta</h3>
+        <pre><code>String sql = "SELECT nome FROM cliente WHERE id = ?"
+
+try (Connection conn = DriverManager.getConnection(
+    url, usuario, senha);
+PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+    stmt.setInt(1, 1);
+
+    try (ResultSet rs = stmt.executeQuery()) {
+        while (rs.next()) {
+            System.out.println(rs.getString("nome"));
+        }
+    }
+}</code></pre>
+
+        <p>O parâmetro <code>?</code> recebe um valor por meio do <code>PreparedStatement</code>. Isso ajuda a evitar SQL injection e permite reutilizar a consulta parametrizada.</p>
+
+        <h3>CRUD e padrão DAO</h3>
+        <p>CRUD representa as operações Create, Read, Update e Delete: inserir, consultar, atualizar e excluir dados.</p>
+        <p>DAO (Data Access Object) separa o código responsável pelo acesso ao banco das regras de negócio da aplicação.</p>
+        <p>Os comandos SQL e os estudos específicos de PostgreSQL estão na página PostgreSQL deste portfólio.</p>
+    </article>
+
+    <article class="cartao destaque">
+        <h2>10. Boas práticas e evolução</h2>
+        <ul>
+            <li>Utilizar nomes claros para classes, métodos e variáveis.</li>
+            <li>Aplicar encapsulamento e separar responsabilidades.</li>
+            <li>Evitar duplicação de código.</li>
+            <li>Escolher estruturas de dados adequadas para cada problema.</li>
+            <li>Tratar exceções de maneira apropriada.</li>
+            <li>Escrever código legível, organizado e testável.</li>
+            <li>Praticar orientação a objetos e integração com banco de dados.</li>
+        </ul>
+        <p>Meu objetivo é aprofundar esses conhecimentos e aplicá-los no desenvolvimento de aplicações backend com Java.</p>
     </article>
 
         <article class="cartao">
-        <h2>12. Imports das Collections</h2>
+        <h2>11. Imports das Collections</h2>
         <p>
             Para usar as implementações dos exemplos anteriores,
             normalmente precisamos importar as classes e interfaces.
