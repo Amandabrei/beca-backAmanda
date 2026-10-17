@@ -19,7 +19,7 @@
     <p class="subtitulo">
         Conceitos essenciais da linguagem Java.
     </p>
-    <!-- 1. O QUE É JAVA -->
+
     <article class="cartao">
         <h2>1. O que é Java e como funciona?</h2>
         <p>
@@ -30,12 +30,12 @@
             executado pela JVM(Java Virtual Machine).
         </p>
         <ul>
-            <li>JDK: ferramentas para desenvolver e compilar programas JAVA.</li>
-            <li>JRE: ambiente necessário para executar aplocações JAVA.</li>
-            <li>JVM: executa o bytecode.</li>
+            <li><u>JDK</u>: ferramentas para desenvolver e compilar programas JAVA.</li>
+            <li><u>JRE</u>: ambiente necessário para executar aplocações JAVA.</li>
+            <li><u>JVM</u>: executa o bytecode.</li>
         </ul>
     </article>
-    <!-- 2. VARIÁVEIS -->
+
     <article class="cartao">
         <h2>2. Variáveis e tipos de dados</h2>
         <p>
@@ -51,15 +51,15 @@ char letra = 'A';</code></pre>
             <p>
             <h2>Tipos Primitivos</h2>
             </p>
-            <li>String: textos.</li>
-            <li>int: números inteiros.</li>
-            <li>double: números decimais.</li>
-            <li>boolean: verdadeiro ou falso.</li>
-            <li>char: um caractere.</li>
-            <li>byte: </li>
-            <li>short: </li>
-            <li>long: </li>
-            <li>float: </li>
+            <li><strong>String:</strong> textos.</li>
+            <li><strong>int:</strong> números inteiros.</li>
+            <li><strong>double:</strong> números decimais.</li>
+            <li><strong>boolean:</strong> verdadeiro ou falso.</li>
+            <li><strong>char:</strong> um caractere.</li>
+            <li><strong>byte:</strong> números inteiros pequenos, de -128 a 127.</li>
+            <li><strong>short:</strong> números inteiros de -32.768 a 32.767.</li>
+            <li><strong>long:</strong> números inteiros longos.</li>
+            <li><strong>float:</strong> números decimais com menor precisão que double.</li>
         </ul>
         <ul>
             <p>
@@ -76,7 +76,7 @@ char letra = 'A';</code></pre>
             por exemplo, int <--> Integer.</li>
         </ul>
     </article>
-    <!-- 3. OPERADORES -->
+
     <article class="cartao">
         <h2>3. Operadores</h2>
         <pre><code>int soma = 10 + 5;
@@ -96,7 +96,7 @@ int resto = 10 % 3;</code></pre>
             <li>||: OU lógico.</li>
         </ul>
     </article>
-    <!-- 4. CONDICIONAIS E REPETIÇÃO -->
+
     <article class="cartao">
         <h2>4. Condicionais e laços</h2>
         <p>O if e o else executam códigos conforme uma condição.</p>
@@ -111,7 +111,7 @@ if (idade >= 18) {
    System.out.println(i);
 }</code></pre>
     </article>
-    <!-- 5. MÉTODOS -->
+
     <article class="cartao">
         <h2>5. Métodos</h2>
         <p>
@@ -129,7 +129,7 @@ if (idade >= 18) {
             retorna um valor.
         </p>
     </article>
-    <!-- 6. ORIENTAÇÃO A OBJETOS -->
+
     <article class="cartao">
         <h2>6. Orientação a objetos (POO)</h2>
         <ul>
@@ -167,7 +167,7 @@ if (idade >= 18) {
    }
 }</code></pre>
     </article>
-    <!-- 7. MODIFICADORES -->
+
     <article class="cartao">
         <h2>7. Modificadores de acesso</h2>
         <ul>
@@ -191,9 +191,28 @@ if (idade >= 18) {
             </li>
         </ul>
     </article>
-    <!-- 8. COLLECTIONS -->
+
     <article class="cartao">
-        <h2>8. Collections — List, Set e Map</h2>
+        <h2>8. Comparable, Comparator, equals e hasCode</h2>
+        <ul>
+            <li><strong>Comparable:</strong> define a ordem natural dentro da própria classe,
+                pelo método compareTo().
+            </li>
+            <li><strong>Comparator:</strong> cria uma regra de comparação externa, pelo método compare(), pode usar Lambda.
+            </li>
+            <li><strong>Equals:</strong> verifica igualdade lógica, equals().
+            </li>
+            <li><strong>HasCode:</strong> gera um número usado por estruturas hash para localizar objetos, hasCode().
+            </li>
+            <li>Importante: se dois objetos são iguais por equals(), precisam ter o mesmo hasCode().
+                O inverso não é obrigatório. Se uma classe for usada em HasSet/HasMap, implemente corretamente os dois métodos,
+                considerando os campos que definem igualdade.</li>
+        </ul>
+    </article>
+
+
+    <article class="cartao">
+        <h2>9. Collections — List, Set e Map</h2>
         <p>
             Collections são estruturas usadas para armazenar
             e manipular grupos de elementos.
@@ -302,9 +321,31 @@ notas.put("Valentina", 9);
             <li><strong>TreeMap:</strong> ordena pelas chaves.</li>
         </ul>
     </article>
-    <!-- 9. EXCEÇÕES -->
+
     <article class="cartao">
-        <h2>9. Tratamento de exceções</h2>
+        <h2>10. Generics, Type Safety e Wildcards</h2>
+        <lu>
+            Generics: permitem definir o tipo que uma classe ou coleção aceita, aumentando a segurança e reduzindo casts.
+
+        </lu>
+        <pre><code>List<String> {
+   int resultado = 10 / 0;
+} catch (ArithmeticException e) {
+   System.out.println("Erro matemático");
+} finally {
+   System.out.println("Finalizado");
+}</code></pre>
+        <ul>
+            <li><strong><T></T></strong> .</li>
+            <li><strong>catch:</strong> trata uma exceção compatível.</li>
+            <li><strong>finally:</strong> bloco executado após try/catch, salvo situações excepcionais.</li>
+            <li><strong>throw:</strong> lança uma exceção.</li>
+            <li><strong>throws:</strong> declara exceções que um método pode propagar.</li>
+        </ul>
+    </article>
+
+    <article class="cartao">
+        <h2>11. Tratamento de exceções</h2>
         <p>
             Exceções representam situações que afetam
             o fluxo normal do programa.
@@ -317,16 +358,16 @@ notas.put("Valentina", 9);
    System.out.println("Finalizado");
 }</code></pre>
         <ul>
-            <li>try: contém o código que pode gerar uma exceção.</li>
-            <li>catch: trata uma exceção compatível.</li>
-            <li>finally: bloco executado após try/catch, salvo situações excepcionais.</li>
-            <li>throw: lança uma exceção.</li>
-            <li>throws: declara exceções que um método pode propagar.</li>
+            <li><strong>try:</strong> contém o código que pode gerar uma exceção.</li>
+            <li><strong>catch:</strong> trata uma exceção compatível.</li>
+            <li><strong>finally:</strong> bloco executado após try/catch, salvo situações excepcionais.</li>
+            <li><strong>throw:</strong> lança uma exceção.</li>
+            <li><strong>throws:</strong> declara exceções que um método pode propagar.</li>
         </ul>
     </article>
-    <!-- IMPORTS PARA OS EXEMPLOS DE COLLECTIONS -->
-    <article class="cartao">
-        <h2>10. Imports das Collections</h2>
+
+        <article class="cartao">
+        <h2>12. Imports das Collections</h2>
         <p>
             Para usar as implementações dos exemplos anteriores,
             normalmente precisamos importar as classes e interfaces.
