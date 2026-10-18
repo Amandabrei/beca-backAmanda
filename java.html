@@ -265,26 +265,114 @@ Integer objeto = numero; // boxing
 int valor = objeto; // unboxing</code></pre>
 
         <h3>Garbage Collector</h3>
-        <p>O Garbage Collector (GC) recupera memória ocupada por objetos que não são mais alcançáveis. Sair do escopo de uma variável não significa que o objeto será imediatamente desalocado.</p>
+        <p>O Garbage Collector (GC) recupera memória ocupada por objetos que não são mais alcançáveis. Sair do escopo
+            de uma variável não significa que o objeto será imediatamente desalocado.</p>
 
-        <h3>Herança e polimorfismo</h3>
-        <p>Herança permite que uma classe reutilize características de outra. </p>
-        <p>Polimorfismo permite tratar objetos diferentes por um tipo comum.</p>
-        <pre><code>class Animal {
-    void emitirSom() {
-        System.out.println("Som");
-    }
-}
+        <h3>Polimorfismo</h3>
 
-class Cachorro extends Animal {
+        <p>Permite que objetos de classes diferentes sejam tratados
+            pelo mesmo tipo, executando comportamentos específicos.
+            Quando um método é sobrescrito, sua implementação depende
+            do objeto real.</p>
+
+        <pre><code>class Cachorro extends Animal {
+
     @Override
     void emitirSom() {
-        System.out.println("Au au");
+        System.out.println("Au au!");
     }
 }
 
 Animal animal = new Cachorro();
-animal.emitirSom(); // Au au</code></pre>
+animal.emitirSom(); // Au au!</code></pre>
+
+        <p>A referência é do tipo Animal, mas o método executado é o da classe Cachorro.</p>
+
+        <h3>Herança</h3>
+
+        <p>Permite que uma classe (filha) herde atributos e métodos
+            de outra classe (pai), reutilizando e especializando código.
+            Em Java, usamos <code>extends</code>.
+        </p>
+
+        <pre><code>class Animal {
+
+    void emitirSom() {
+        System.out.println("Som de animal");
+    }
+}
+
+class Cachorro extends Animal {
+    void abanarRabo() {
+        System.out.println("Abanando o rabo");
+    }
+}</code></pre>
+
+        <p>Cachorro herda emitirSom() de Animal e possui seu próprio
+            método abanarRabo().
+        </p>
+
+        <h3>Abstração</h3>
+
+        <p>Abstração é representar no código as características e os
+            comportamentos essenciais de algo, escondendo detalhes
+            desnecessários para quem utiliza o objeto.
+        </p>
+
+        <p>Por exemplo, ao utilizar um carro, posso chamar o método
+            acelerar() sem precisar conhecer todos os detalhes internos
+            do funcionamento do motor.</p>
+
+        <p>Em Java, podemos utilizar classes abstratas e interfaces
+            para definir comportamentos e contratos.</p>
+
+        <pre><code>abstract class Animal {
+
+    abstract void emitirSom();
+
+    void dormir() {
+        System.out.println("Animal dormindo");
+    }
+}
+
+class Cachorro extends Animal {
+
+    @Override
+    void emitirSom() {
+        System.out.println("Au au!");
+    }
+}</code></pre>
+
+        <p>A classe Animal é abstrata e não pode ser instanciada
+            diretamente. Cachorro implementa o comportamento emitirSom().</p>
+
+        <h3>Encapsulamento</h3>
+
+        <p>Encapsulamento consiste em proteger os dados de um objeto
+            e controlar como eles podem ser acessados ou modificados.</p>
+        <p>Geralmente, utilizamos o modificador private nos atributos
+            e métodos públicos para permitir o acesso controlado.</p>
+
+        <pre><code>public class Conta {
+
+    private double saldo;
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+}</code></pre>
+
+        <p>O atributo saldo é private. Não posso alterá-lo diretamente
+            de fora da classe. O método depositar() controla a alteração
+            e impede depósitos com valores inválidos.</p>
+        <p>Resumindo: abstração destaca o que é importante; encapsulamento
+            protege os dados e controla o acesso a eles.</p>
 
         <h3>Upcasting e downcasting</h3>
         <p>Upcasting trata um objeto de uma subclasse como o tipo da superclasse.</p>
@@ -416,6 +504,138 @@ List&lt;? extends Number&gt; valores;</code></pre>
 
         <p><code>? extends T</code> representa um tipo T ou subtipo. <code>? super T</code> representa T ou um supertipo.</p>
 
+        <h3>Type safety (segurança de tipos)</h3>
+
+
+
+        <p>
+
+            Type safety significa segurança de tipos. Java verifica se os
+
+            valores utilizados são compatíveis com os tipos declarados,
+
+            ajudando a evitar erros durante a compilação.
+
+        </p>
+
+
+
+        <p>
+
+            Generics permitem definir quais tipos uma classe, interface
+
+            ou método pode receber. Isso evita que objetos de tipos
+
+            incompatíveis sejam adicionados a uma coleção.
+
+        </p>
+
+
+
+        <pre><code>List&lt;String&gt; nomes = new ArrayList<>();
+
+
+
+nomes.add("Amanda");
+
+nomes.add("Pedro");
+
+
+
+// nomes.add(10); // Erro de compilação
+
+
+
+String nome = nomes.get(0);</code></pre>
+
+
+
+        <p>
+
+            Como a lista foi declarada como List&lt;String&gt;, ela aceita
+
+            Strings. O compilador identifica a tentativa de adicionar
+
+            um Integer.
+
+        </p>
+
+
+
+        <p>
+
+            Sem Generics, uma coleção poderia armazenar diferentes tipos
+
+            de objetos, exigindo conversões e aumentando o risco de
+
+            ClassCastException durante a execução.
+
+        </p>
+
+
+
+        <h3>Curingas (Wildcards) em Generics</h3>
+
+
+
+        <p>
+            O curinga ? representa um tipo desconhecido. Ele é utilizado
+            quando um método ou uma variável pode trabalhar com uma
+            coleção cujo tipo específico não está definido.
+        </p>
+
+        <p><strong>1. Curinga sem limite: &lt;?&gt;</strong></p>
+
+        <pre><code>List&lt;?&gt; lista;
+
+lista = List.of("Java", "Spring");
+lista = List.of(10, 20, 30);</code></pre>
+
+        <p>A lista pode ser de qualquer tipo. Posso consultar seus
+            elementos como Object, mas não posso adicionar novos
+            elementos (exceto null).
+        </p>
+
+        <p><strong>2. Curinga limitado superiormente: &lt;? extends T&gt;</strong></p>
+
+        <pre><code>public double somar(List&lt;? extends Number&gt; numeros) {
+
+    double total = 0;
+
+    for (Number numero : numeros) {
+        total += numero.doubleValue();
+    }
+    return total;
+}</code></pre>
+
+        <p>Aceita uma lista de Number ou de uma subclasse, como Integer
+            ou Double. É útil quando preciso ler valores de tipos derivados.
+            Não posso adicionar um Integer ou Double arbitrariamente,
+            pois o tipo exato da lista é desconhecido.
+        </p>
+
+        <p><strong>3. Curinga limitado inferiormente: &lt;? super T&gt;</strong></p>
+
+        <pre><code>public void adicionarNumeros(List&lt;? super Integer&gt; lista) {
+    lista.add(10);
+    lista.add(20);
+}</code></pre>
+
+        <p>Aceita uma lista de Integer ou de um supertipo, como Number
+            ou Object. Posso adicionar Integer com segurança, mas ao
+            consultar os elementos, só tenho garantia de receber Object.
+        </p>
+        <p><strong>Dica para lembrar: PECS</strong></p>
+        <ul>
+            <li><strong>Producer Extends:</strong> se a coleção fornece
+                valores para leitura, prefira extends.</li>
+            <li><strong>Consumer Super:</strong> se a coleção recebe
+                valores que você adiciona, prefira super.</li>
+        </ul>
+        <p>Exemplo: List&lt;? extends Number&gt; é adequada para ler números;
+            List&lt;? super Integer&gt; é adequada para inserir Integers.
+        </p>
+
         <h3>List, Set e Map</h3>
         <ul>
             <li><code>List</code>: mantém uma sequência de elementos, permite duplicados e acesso por índice.</li>
@@ -529,7 +749,7 @@ PreparedStatement stmt = conn.prepareStatement(sql)) {
         <p>Os comandos SQL e os estudos específicos de PostgreSQL estão na página PostgreSQL deste portfólio.</p>
     </article>
 
-    <article class="cartao destaque">
+    <article class="cartao">
         <h2>10. Boas práticas e evolução</h2>
         <ul>
             <li>Utilizar nomes claros para classes, métodos e variáveis.</li>
