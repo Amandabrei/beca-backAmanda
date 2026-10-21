@@ -506,78 +506,40 @@ List&lt;? extends Number&gt; valores;</code></pre>
 
         <h3>Type safety (segurança de tipos)</h3>
 
-
-
         <p>
-
             Type safety significa segurança de tipos. Java verifica se os
-
             valores utilizados são compatíveis com os tipos declarados,
-
             ajudando a evitar erros durante a compilação.
-
         </p>
-
-
 
         <p>
-
             Generics permitem definir quais tipos uma classe, interface
-
             ou método pode receber. Isso evita que objetos de tipos
-
             incompatíveis sejam adicionados a uma coleção.
-
         </p>
-
-
 
         <pre><code>List&lt;String&gt; nomes = new ArrayList<>();
 
-
-
 nomes.add("Amanda");
-
 nomes.add("Pedro");
 
-
-
 // nomes.add(10); // Erro de compilação
-
-
-
 String nome = nomes.get(0);</code></pre>
 
 
-
         <p>
-
             Como a lista foi declarada como List&lt;String&gt;, ela aceita
-
             Strings. O compilador identifica a tentativa de adicionar
-
             um Integer.
 
         </p>
 
-
-
-        <p>
-
-            Sem Generics, uma coleção poderia armazenar diferentes tipos
-
+        <p>Sem Generics, uma coleção poderia armazenar diferentes tipos
             de objetos, exigindo conversões e aumentando o risco de
-
             ClassCastException durante a execução.
 
         </p>
-
-
-
         <h3>Curingas (Wildcards) em Generics</h3>
-
-
-
         <p>
             O curinga ? representa um tipo desconhecido. Ele é utilizado
             quando um método ou uma variável pode trabalhar com uma

@@ -15,12 +15,21 @@
     <p class="destaque">MEUS RESUMOS</p>
     <h1>🌱 Java com Spring Boot</h1>
     <p class="subtitulo">Construindo aplicações e APIs REST.</p>
+
     <article class="cartao">
         <h2>1. O que é Spring Boot?</h2>
         <p>É uma ferramenta baseada no Spring que facilita a criação de aplicações Java, reduzindo configurações manuais.</p>
     </article>
+
     <article class="cartao">
-        <h2>2. Annotations principais</h2>
+        <h2>2. O que é Maven?</h2>
+        <p>Ferramenta de automação e gerenciamento de projetos Java, com ela você baixa bibliotecas
+            organiza o projeto, compila o código e executa testes, usando diversas dependências e plugins elas são
+            armazenadas no pom.xml do projeto.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>3. Annotations principais</h2>
         <ul>
             <li>@SpringBootApplication: configuração principal da aplicação.</li>
             <li>@RestController: cria um controlador que normalmente retorna dados.</li>
@@ -29,13 +38,26 @@
             <li>@PostMapping: atende requisições POST.</li>
             <li>@PutMapping: atende requisições PUT.</li>
             <li>@DeleteMapping: atende requisições DELETE.</li>
+            <li>@PathVariable: captura o valor que faz parte da URL, como o ID.</li>
+            <li>@ControllerAdvice: (exceção) centraliza o tratamento de exceções de vários controllers.</li>
+            <li>@Exception Handler: (exceção) define qual método tratará uma exceção específica.</li>
+            <li>ResponseStatus: define o código HTTP que será retornado, como 404 Not Found.</li>
+            <li>@Entity: identifica uma classe como uma entidade.</li>
             <li>@Service: identifica uma classe de serviço.</li>
             <li>@Repository: identifica uma classe de acesso a dados.</li>
             <li>@Autowired: solicita injeção de dependência; em muitos casos, é preferível usar construtor.</li>
+            <li>@Table: nome da tabela no banco de dados.</li>
+            <li>@Id: define a chave primária.</li>
+            <li>@Column: configura a coluna corresnpodente ao atributo.</li>
+            <li>@DataJPATest: (teste) testa camada de persistência, ou seja, verifica se as entidades e repositores
+                    funcionam corretamente com o banco de dados.</li>
+            <li>@Bean: indica que o método cria um objeto que será registrado como um Bean.</li>
+            <li>@Configuration: indica que a classe contém configuração do Spring.</li>
         </ul>
     </article>
+
     <article class="cartao">
-        <h2>3. Camadas de uma aplicação</h2>
+        <h2>4. Camadas de uma aplicação</h2>
         <ul>
             <li>Entity: representa os dados uma entidade persistida no banco.</li>
             <li>DTO: transporta dados entre partes da aplicação, sem expor a entidade.</li>
@@ -45,8 +67,50 @@
             <li>Repository: consulta, salva, atualiza e exclui dados no banco.</li>
         </ul>
     </article>
+
     <article class="cartao">
-        <h2>4. Exemplo de Controller</h2>
+        <h2>5. Exemplo de Entity</h2>
+        <pre><code>@Entity
+@Table(name = "person")
+public class Person implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name", nullable = false, length = 80)
+    private String Name;
+
+    @Column(nullable = false, length = 100)
+    private String address;
+}</code></pre>
+        <p>Indica que a classe representa uma entidade no banco de dados.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>6. Exemplo de Service</h2>
+        <pre><code>@Service
+public class PersonServices {
+
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(PersonServices.class);
+    private Logger logger = Logger.getLogger(PersonServices.class.getName());
+
+    @Autowired
+    PersonRepository repository;
+
+    public List<Person> findAll() {
+
+        logger.info("Finding all person!!");
+        return repository.findAll();
+    }
+}</code></pre>
+        <p>Indica as regras do negócio.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>7. Exemplo de Controller</h2>
         <pre><code>@RestController
 @RequestMapping("/clientes")
 public class ClienteController {
@@ -55,10 +119,21 @@ public class ClienteController {
        return "Lista de clientes";
    }
 }</code></pre>
-        <p>Esse exemplo retorna um texto simples. Em uma API real, o Controller normalmente delega a operação para um Service.</p>
+        <p>Recebe as requisições HTTP(GET, POST, PUT, DELETE). Em uma API real, o Controller normalmente delega a operação para um Service.</p>
     </article>
+
     <article class="cartao">
-        <h2>5. O que é CRUD?</h2>
+        <h2>8. Exemplo de Repository</h2>
+        <pre><code>
+public interface PersonRepository extends JpaRepository<Person, Long> {
+    Optional<Person> findByEmail(String email);
+
+}</code></pre>
+        <p>Responsável pelo acesso ao banco de dados, realiza operações como buscar, criar, atualizar e deletar.</p>
+    </article>
+
+    <article class="cartao">
+        <h2>9. O que é CRUD?</h2>
         <ul>
             <li>Create: criar registros.</li>
             <li>Read: consultar registros.</li>
@@ -67,8 +142,9 @@ public class ClienteController {
         </ul>
         <p>Essas operações são frequentemente associadas aos métodos HTTP POST, GET, PUT ou PATCH, e DELETE.</p>
     </article>
+
     <article class="cartao">
-        <h2>6. JPA e Hibernate</h2>
+        <h2>10. JPA e Hibernate</h2>
         <p>JPA é uma especificação para persistência de objetos Java. Hibernate é uma implementação popular dessa especificação.</p>
         <pre><code>@Entity
 public class Cliente {
@@ -79,6 +155,7 @@ public class Cliente {
 }</code></pre>
         <p>Uma entidade normalmente representa dados que podem ser armazenados em uma tabela do banco.</p>
     </article>
+    
     <p><a href="index.html" class="link-cartao">← Voltar ao início</a></p>
 </main>
 <footer>
